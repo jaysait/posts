@@ -18,6 +18,7 @@ OnDestroy {
 
   private authStatusSubs : Subscription;
   userIsAuthenticated = false;
+  userId : string;
   constructor(private postsService : PostsService, private authService : AuthService) {}
 
   ngOnInit() {
@@ -25,6 +26,9 @@ OnDestroy {
     this
       .postsService
       .getPosts(this.postsPerPage, this.currentPage);
+    this.userId = this
+      .authService
+      .getUserId();
     this.postsSub = this
       .postsService
       .getPostUpdateListener()
@@ -44,6 +48,9 @@ OnDestroy {
       .getAuthStatusListener()
       .subscribe(isAuthenticated => {
         this.userIsAuthenticated = isAuthenticated;
+        this.userId = this
+          .authService
+          .getUserId();
       });
 
   }
@@ -57,6 +64,8 @@ OnDestroy {
         this
           .postsService
           .getPosts(this.postsPerPage, this.currentPage);
+      }, () => {
+        this.isLoading = false;
       });
   }
 
