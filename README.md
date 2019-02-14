@@ -1,6 +1,6 @@
 # Posts
 
-Simple Angular (frontend) and Node/Express/Mongo (backend) project to create/authorize/autheticate users (bcrypt & jwt) allowing them to CRUD simple posts (title, picture, description) to get comfortable with the parts of Angular development (components, modules, directives, services, data/action binding, etc) and connect with an api backend using Node.
+Simple Angular (frontend) and Node/Express/Mongo (backend) project to create/authorize/autheticate users (bcrypt & jwt) allowing them to CRUD simple posts (title, picture, description) for educational experience to get comfortable with the parts of Angular development (components, modules, directives, services, data/action binding, etc) and connect with an api backend using Node.
 
 Backend hosted on Heroku, frontend on Firebase, Cloud Mongo for database collections.
 
